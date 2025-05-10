@@ -1,73 +1,162 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodata Sederhana</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #f0f8ff; /* Warna latar belakang */
+            display: flex;
             font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 40px;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
         }
-        h1 {
-            font-size: 32px;
+
+        h1,
+        h2 {
             color: #333;
-            margin-bottom: 20px;
         }
-        p {
+
+        .center-text {
+            text-align: center;
+        }
+
+        .biodata-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .biodata-container img {
+            width: 200px;
+            border: 3px solid #555;
+            border-radius: 8px;
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        .info p {
             font-size: 18px;
             margin: 10px 0;
         }
-        img {
-            width: 200px;
-            border: 3px solid #555;
-            margin-bottom: 20px;
+
+        .info a {
+            color: #0066cc;
+            text-decoration: none;
         }
+
+        .info a:hover {
+            text-decoration: underline;
+        }
+
         form {
             background-color: #ffffff;
-            padding: 15px;
-            border: 2px solid #ccc;
-            width: 300px;
-            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-width: 500px;
         }
-        input, textarea {
+
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea {
             width: 100%;
-            padding: 8px;
-            margin: 8px 0;
-            box-sizing: border-box;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        button {
+
+        form button {
+            margin-top: 15px;
+            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
-            padding: 10px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
-        button:hover {
+
+        form button:hover {
             background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .biodata-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .info {
+                text-align: left;
+                width: 100%;
+            }
+
+            form {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
-    <h1>Biodata Pribadi</h1>
-    <img src="foto.jpg" alt="Foto Pribadi">
-    <p><strong>Nama:</strong> M.Yusron Nawawi</p>
-    <p><strong>Email:</strong> nawawiyusron36@gmail.com</p>
-    <p><strong>Telepon:</strong> +62 878-6072-8048</p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/Yusron-Nawawi" target="_blank">Yusron-Nawawi</a></p>
+    <div class="left">
+        <h1 class="center-text">Biodata Pribadi</h1>
 
-    <h2>Hubungi Saya</h2>
-<form action="#" method="post">
-    <label for="name">Nama:</label><br/>
-    <input type="text" id="name" name="name" placeholder="Nama Anda" required><br/><br/>
+        <div class="biodata-container">
+            <img src="foto.jpg" alt="Foto Pribadi">
+            <div class="info">
+                <p><strong>Nama:</strong> M. Yusron Nawawi</p>
+                <p><strong>Email:</strong> nawawiyusron36@gmail.com</p>
+                <p><strong>Telepon:</strong> +62 878-6072-8048</p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/Yusron-Nawawi" target="_blank">Yusron-Nawawi</a></p>
+            </div>
+        </div>
+    </div>
 
-    <label for="email">Email:</label><br/>
-    <input type="email" id="email" name="email" placeholder="Email Anda" required><br/><br/>
+    <div class="right">
+        <h2 class="center-text">Hubungi saya</h2>
 
-    <label for="message">Pesan:</label><br/>
-    <textarea id="message" name="message" rows="4" placeholder="Pesan Anda" required></textarea><br/><br/>
+        <form action="#" method="post">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Nama Anda" required>
 
-    <button type="submit">Kirim</button>
-</form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email Anda" required>
 
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Pesan Anda" required></textarea>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
 </body>
+
 </html>
